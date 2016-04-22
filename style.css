@@ -1,44 +1,46 @@
 body {
-    background-color: rgb(100, 100, 100);
+    background-color: rgb(222, 228, 228);
     font-family: 'Open Sans', sans-serif;
     line-height: 200%;
     font-weight: 400;
     margin: 0;
-    color: rgb(236, 236, 236);
+    color: rgb(76, 83, 93);
 }
 
 h1, h3 {
     display: inline-block;
 }
 
-ul {
-    margin: 0;
+h3 {
+    margin-bottom: 0;
 }
 
 .head {
     width: 100%;
     text-align: center;
-    background-color: rgb(94, 149, 179);
+    background-color: rgb(206, 219, 228);
     padding-bottom: 20px;
 }
 
 .head h1 {
     font-weight: 300;
     font-size: 60px;
+    color: rgb(255, 255, 255);
 }
 
 .head a {
     display: inline-block;
     cursor: pointer;
-    font-size: 34px;
+    font-size: 28px;
     font-weight: 300;
     padding: 10px;
     text-decoration: none;
-    color: rgb(236, 236, 236);
+    color: rgb(76, 83, 93);
+    outline: 0;
 }
 
 #nav-selected {
-    color: rgb(189, 222, 97);
+    /*color: rgb(192, 180, 180);*/
     font-size: 44px;
 }
 
@@ -47,11 +49,11 @@ ul {
 }
 
 .content {
-	display: none;
+    display: none;
     margin: 0 auto 0 auto;
     width: 600px;
 }
 
 #content-selected {
-	display: block;
+    display: block;
 }
