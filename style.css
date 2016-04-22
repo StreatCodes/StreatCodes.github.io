@@ -1,41 +1,57 @@
 body {
     background-color: rgb(100, 100, 100);
     font-family: 'Open Sans', sans-serif;
-    line-height: 150%;
-    font-weight:400;
+    line-height: 200%;
+    font-weight: 400;
     margin: 0;
     color: rgb(236, 236, 236);
 }
 
-h1, h3{
+h1, h3 {
     display: inline-block;
 }
 
-.head{
+ul {
+    margin: 0;
+}
+
+.head {
     width: 100%;
     text-align: center;
     background-color: rgb(94, 149, 179);
     padding-bottom: 20px;
 }
 
-.head h1{
+.head h1 {
     font-weight: 300;
     font-size: 60px;
 }
 
-.head a{
+.head a {
     display: inline-block;
     cursor: pointer;
     font-size: 34px;
     font-weight: 300;
     padding: 10px;
+    text-decoration: none;
+    color: rgb(236, 236, 236);
 }
 
-.head a .selected{
+#nav-selected {
+    color: rgb(189, 222, 97);
     font-size: 44px;
 }
 
-.content{
-    width: 60%;
+.head a .selected {
+    font-size: 44px;
+}
+
+.content {
+	display: none;
     margin: 0 auto 0 auto;
+    width: 600px;
+}
+
+#content-selected {
+	display: block;
 }
