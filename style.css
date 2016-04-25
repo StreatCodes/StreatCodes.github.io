@@ -1,13 +1,14 @@
 body {
     background-color: rgb(222, 228, 228);
     font-family: 'Open Sans', sans-serif;
-    line-height: 200%;
+    line-height: 160%;
     font-weight: 400;
     margin: 0;
     color: rgb(76, 83, 93);
 }
 
-h1, h3 {
+h1,
+h3 {
     display: inline-block;
 }
 
@@ -51,9 +52,89 @@ h3 {
 .content {
     display: none;
     margin: 0 auto 0 auto;
-    width: 600px;
+    width: 800px;
 }
 
 #content-selected {
     display: block;
+}
+
+.terminal {
+    background-color: #333;
+    border-radius: 3px;
+    color: #DDD;
+    font-family: "Courier New", Courier, monospace;
+    margin: 20px auto 0 auto;
+    width: 800px;
+}
+
+.terminal-title {
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+    background-color: #222;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    text-align: center;
+    position: relative;
+}
+
+.terminal-button {
+    min-width: 14px;
+    min-height: 14px;
+    border-radius: 50%;
+    position: absolute;
+    right: 9px;
+    top: 9px;
+}
+
+.terminal-button:focus {
+    background-color: #FAF;
+}
+
+#terminal-button-close {
+    background-color: red;
+}
+
+#terminal-button-close:hover {
+    background-color: darkred;
+}
+
+#terminal-button-maximize {
+    background-color: orange;
+    right: 32px;
+}
+
+#terminal-button-maximize:hover {
+    background-color: darkgoldenrod;
+    right: 32px;
+}
+
+#terminal-button-minimize {
+    background-color: green;
+    right: 55px;
+}
+
+#terminal-button-minimize:hover {
+    background-color: darkgreen;
+}
+
+.terminal-content {
+    padding: 20px;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.terminal-content::-webkit-scrollbar {
+    width: 7px;
+}
+
+.terminal-content::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgb(82, 82, 82);
+    visibility: hidden;
+}
+
+.terminal-content:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
 }

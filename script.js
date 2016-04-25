@@ -6,6 +6,7 @@ var contents = document.getElementsByClassName('content');
 hashChange();
 
 window.addEventListener("hashchange", hashChange, false);
+window.addEventListener("load", startTerminal(document.getElementById('terminal-content')), false);
 
 function hashChange() {
 
@@ -34,4 +35,27 @@ function hashChange() {
     //show new selection
     navs[hash].id = 'nav-selected';
     contents[hash].id = 'content-selected';
+}
+
+var aboutContent;
+
+var terminalInterval;
+var terminalContent;
+var count = 0;
+
+function startTerminal(pTerminalContent) {
+    terminalContent = pTerminalContent;
+    aboutContent = terminalContent.innerHTML;
+    terminalContent.innerHTML = '';
+
+    terminalInterval = window.setInterval(typeTerminal, 20);
+}
+
+function typeTerminal() {
+    count++;
+    terminalContent.innerHTML = aboutContent.substring(0, count);
+
+    if(count >= aboutContent.length){
+        window.clearInterval(terminalInterval);
+    }
 }
