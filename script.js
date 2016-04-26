@@ -1,18 +1,32 @@
 'use strict';
 
-var navs = document.getElementsByClassName('navigation');
-var contents = document.getElementsByClassName('content');
+var pages = [];
 
-hashChange();
+var about = `A BIT ABOUT ME.<br />
+I'm a strong believer in open source software, I love to break, fix and customize when i can.<br />
+I have a passion for clean energy and want to make things as fast and effecient as possible.<br />`
+
+var skills = `Languages<br />
+- javascript<br />
+- HTML5, CSS3<br />
+- C, C++<br />
+`
+
+var contact = `Contact me at example@gmail.com`
+
+pages.push(about);
+pages.push(skills);
+pages.push(contact);
+
+var navs = document.getElementsByClassName('navigation');
 
 window.addEventListener("hashchange", hashChange, false);
-window.addEventListener("load", startTerminal(document.getElementById('terminal-content')), false);
+window.addEventListener("load", hashChange, false);
 
 function hashChange() {
 
     //remove previous selection
     var prevNav = document.getElementById('nav-selected');
-    var prevContent = document.getElementById('content-selected');
     var hash;
 
     switch (window.location.hash) {
@@ -30,22 +44,21 @@ function hashChange() {
     }
 
     if (prevNav) prevNav.removeAttribute('id');
-    if (prevContent) prevContent.removeAttribute('id');
 
     //show new selection
     navs[hash].id = 'nav-selected';
-    contents[hash].id = 'content-selected';
+
+    startTerminal(pages[hash]);
 }
 
-var aboutContent;
-
+var terminalText;
 var terminalInterval;
 var terminalContent;
 var count = 0;
 
-function startTerminal(pTerminalContent) {
-    terminalContent = pTerminalContent;
-    aboutContent = terminalContent.innerHTML;
+function startTerminal(pTerminalText) {
+    terminalContent = document.getElementById('terminal-content');
+    terminalText = pTerminalText;
     terminalContent.innerHTML = '';
 
     terminalInterval = window.setInterval(typeTerminal, 20);
@@ -53,9 +66,9 @@ function startTerminal(pTerminalContent) {
 
 function typeTerminal() {
     count++;
-    terminalContent.innerHTML = aboutContent.substring(0, count);
+    terminalContent.innerHTML = terminalText.substring(0, count);
 
-    if(count >= aboutContent.length){
+    if(count >= terminalText.length){
         window.clearInterval(terminalInterval);
     }
 }
