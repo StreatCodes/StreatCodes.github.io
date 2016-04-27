@@ -18,9 +18,7 @@ h3 {
 
 a:link, a:visited {
     color: rgb(241, 239, 158);
-}
-a:hover, a:active{
-    color: hotpink;
+    text-decoration: none;
 }
 
 .head {
